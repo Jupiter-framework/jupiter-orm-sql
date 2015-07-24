@@ -1,3 +1,8 @@
+import jupiterOrm from 'jupiter-orm';
+import jupiterOrmSql from 'jupiter-orm-sql';
+jupiterOrm.typeRegister('psql', jupiterOrmSql);
+
+/*
 var knex = require('knex')({
 	client: 'mysql',
 	connection: {
@@ -5,22 +10,25 @@ var knex = require('knex')({
 		user     : 'your_database_user',
 		password : 'your_database_password',
 		database : 'myapp_test'
-	}
-});
+		}
+	});
+*/
 
-knex.cache = {};
+var knex = require('knex');
 
-knex.Fabric = function () {
+jupiterOrmSql.cache = {};
+
+jupiterOrmSql.Fabric = function () {
 	'use strict';
 	
 	var hasOwnProperty,
 		prop;
 		
-	if (Object.getOwnPropertyNames(obj).length == 0) {
+	if (Object.getOwnPropertyNames(this.cache).length == 0) {
 		hasOwnProperty = Object.prototype.hasOwnProperty;
-		for (prop in this) {
-			if (hasOwnProperty.call(this, prop)) {
-				this.cache[prop] = this[prop];
+		for (prop in knex) {
+			if (hasOwnProperty.call(knex, prop)) {
+				this.cache[prop] = knex[prop];
 			}
 		}
 	}
