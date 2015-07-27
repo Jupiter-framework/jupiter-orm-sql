@@ -20,7 +20,7 @@ jupiterOrmSql.Fabric = function (options) {
 		}
 		this.cache.Fabric = this.Fabric;
 		this.cache.exec = jupiterOrm.exec;
-		this.cache(options);
+		options && this.cache(options);
 	}
 	
 	return this.cache;
