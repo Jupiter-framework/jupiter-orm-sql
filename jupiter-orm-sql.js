@@ -1,24 +1,11 @@
 import jupiterOrm from 'jupiter-orm';
-import jupiterOrmSql from 'jupiter-orm-sql';
-jupiterOrm.typeRegister('psql', jupiterOrmSql);
 
-/*
-var knex = require('knex')({
-	client: 'mysql',
-	connection: {
-		host     : '127.0.0.1',
-		user     : 'your_database_user',
-		password : 'your_database_password',
-		database : 'myapp_test'
-		}
-	});
-*/
-
-var knex = require('knex');
+var knex = require('knex'),
+	jupiterOrmSql = {};
 
 jupiterOrmSql.cache = {};
 
-jupiterOrmSql.Fabric = function () {
+jupiterOrmSql.Fabric = function (options) {
 	'use strict';
 	
 	var hasOwnProperty,
@@ -31,6 +18,9 @@ jupiterOrmSql.Fabric = function () {
 				this.cache[prop] = knex[prop];
 			}
 		}
+		this.cache.Fabric = this.Fabric;
+		this.cache.exec = jupiterOrm.exec;
+		this.cache(options);
 	}
 	
 	return this.cache;
