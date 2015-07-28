@@ -12,7 +12,7 @@ npm i --save jupiter-orm-sql
 In your code:
 ```javascript
 import jupiterOrm from 'jupiter-orm';
-import jupiterOrmSql frin 'jupiter-orm-sql';
+import jupiterOrmSql from 'jupiter-orm-sql';
 
 jupiterOrm.typeRegister('psql', jupiterOrmSql);
 ```
@@ -23,7 +23,9 @@ jupiterOrm.typeRegister('psql', jupiterOrmSql);
 
 #### .Fabric()
 
-Return new object API
+Return new object API. It has method `query` which allows to construct database queries which can be executed by method `exec`.
+After that we can chaine to this Promises invocations. Inside `Fabric` we create the connection to database, so after `Fabric` invocation
+with the passed in it connection parameters as an object we have ready-to-use adapter to create and execute queries.
 
 ### ORM Object
 
