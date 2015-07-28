@@ -35,7 +35,7 @@ with the passed in it connection parameters as an object we have ready-to-use ad
 #### Inner Query API
 
 ##### .exec()
-Inner `query` API exposes the following methods: `exec`. It allows to execute queries to databese which were constructured. It returns Promise object for future usage,
+Inner `query` API exposes the following methods: `exec`. It allows to execute queries to databese which were constructured. It returns Promise object for future usage.
 
 ### ORM Object
 
