@@ -27,12 +27,14 @@ Return new object API. It has method `query` which allows to construct database 
 After that we can chaine to this Promises invocations. Inside `Fabric` we create the connection to database, so after `Fabric` invocation
 with the passed in it connection parameters as an object we have ready-to-use adapter to create and execute queries.
 
-##### Inner Adapter API
+#### Inner Adapter API
 
-###### .connect()
+##### .connect()
 `connect` just establishes connection to database with parameters object of its parent object.
 
-##### Inner Query API
+#### Inner Query API
+
+##### .exec()
 Inner `query` API exposes the following methods: `exec`. It allows to execute queries to databese which were constructured. It returns Promise object for future usage,
 
 ### ORM Object
