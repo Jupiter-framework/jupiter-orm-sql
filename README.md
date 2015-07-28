@@ -23,7 +23,7 @@ jupiterOrm.typeRegister('psql', jupiterOrmSql);
 
 #### .Fabric()
 
-Return new object API. It has method `query` to construct database queries which can be executed by method `exec`.
+Return new object API. It has method `query` which allows to construct database queries which can be executed by method `exec`.
 After that we can chaine to this Promises invocations. Inside `Fabric` we create the connection to database, so after `Fabric` invocation
 with the passed in it connection parameters as an object we have ready-to-use adapter to create and execute queries.
 
