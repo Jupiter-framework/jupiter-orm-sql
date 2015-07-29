@@ -18,8 +18,11 @@ export function Fabric(options) {
 	 *	Construct queries to database.
 	 */
 	jupiterOrmSql.query = function () {
-	
-			
+		var requestObject = {};
+		
+		requestObject.exec = function () {};
+		
+		return requestObject;
 	};
 	
 	return jupiterOrmSql;
