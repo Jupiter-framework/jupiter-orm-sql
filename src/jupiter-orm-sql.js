@@ -4,8 +4,6 @@ var jupiterOrmSql = require('knex');
 
 
 export function Fabric(options) {
-	const query = {};
-	
 	/**
 	 *	Connect to database.
 	 */
@@ -20,7 +18,7 @@ export function Fabric(options) {
 	 *	Construct queries to database.
 	 */
 	jupiterOrmSql.query = function () {
-		
+	
 			
 	};
 	
