@@ -7,7 +7,7 @@ export function Fabric(options) {
 	
 	jupiterOrmSql = {
 		/**
-		 *	Connect to database.
+		 * Connect to database.
 		 */
 		connect (options) {
 			return jupiterOrmSql({
@@ -16,13 +16,16 @@ export function Fabric(options) {
 			});
 		},
 		/**
-		 *	Construct queries to database.
+		 * Construct queries to database.
 		 */
 		query () {
-			var requestObject = {};
+			var requestObject = {},
+				queries = [];
 		
 			requestObject.exec = function () {
-			
+				queries.reduce((previousValue, currentValue, index, array) => {
+					
+				}, Promise.resolve(null));
 			};
 		
 			return requestObject;
