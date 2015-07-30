@@ -8,6 +8,12 @@ const testFabric = Fabric({}),
 
 describe('Fabric() method in Adapter', function () {
 	it('Return API object', function () {
-		assert(toStringFromObj.call(testFabric).slice(8, -1) == 'Object', 'Fabric() method must return an object.');
+		assert(toStringFromObj
+			.call(testFabric)
+			.slice(8, -1) == 'Object', 'Fabric() method must return an object.');
+	});
+	
+	it('connect() method to connect to database.', function () {
+		expect(testFabric.insert).to.be.a('function');
 	});
 });
