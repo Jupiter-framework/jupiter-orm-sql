@@ -15,24 +15,23 @@ export function Fabric(options) {
 			});
 	}
 	
-	adapter = {
-		/**
-		 * Construct queries to database.
-		 */
-		query () {
-			var requestObject = {},
-				queries = [];
+	/**
+	 * Construct queries to database.
+	 */
+	adapter.query = () => {
 		
-			requestObject.exec = function () {
-				queries.reduce((previousValue, currentValue, index, array) => {
-					
-				}, Promise.resolve(null));
-			};
+		var requestObject = {},
+			queries = [];
+	
+		requestObject.exec = function () {
+			queries.reduce((previousValue, currentValue, index, array) => {
+				
+			}, Promise.resolve(null));
+		};
+	
+		return requestObject;
 		
-			return requestObject;
-		}
-		
-	}
+	};
 	
 	return adapter;
 }
