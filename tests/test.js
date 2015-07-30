@@ -1,16 +1,13 @@
-var chai = require('chai'), 
-	assert = chai.assert,
-	expect = chai.expect;
+import { expect, assert } from 'chai';
+import { Fabric } from '../src/jupiter-orm-sql';
 
-assert(typeof jupiterOrm != undefined, 'You must import jupiterOrm.');
+const testFabric = Fabric({}),
+	   testQuery = testFabric.query(),
+	   toStringFromObj = Object.prototype.toString;
+	   
 
-assert(typeof knex != undefined, 'You must include Knex in your code.');
-
-// Use this hack because 'constructor.name' may throw TypeError.
-assert(Object.prototype.toString.call(jupiterOrm).slice(8, -1) == 'Object', 'You must import jupiterOrm.');
-
-assert(Object.prototype.toString.call(jupiterOrmSql.cache).slice(8, -1) == 'Object', 'Set cache property to object literal for future usage.');
-
-assert(typeof jupiterOrmSql['Fabric'] == 'function', 'Create Fabric method in adapter.');
-
-expect(jupiterOrmSql.Fabric()).to.have.property('Fabric', 'exec');
+describe('Fabric() method in Adapter', function () {
+	it('Return API object', function () {
+		assert(toStringFromObj.call(testFabric).slice(8, -1) == 'Object', 'Fabric() method must return an object.');
+	});
+});
