@@ -4,17 +4,18 @@ var jupiterOrmSql = require('knex');
 
 
 export function Fabric(options) {
-	
-	jupiterOrmSql = {
-		/**
-		 * Connect to database.
-		 */
-		connect (options) {
-			return jupiterOrmSql({
+	var adapter = connect();
+	/**
+	 * Connect to database.
+	 */
+	function connect() {
+		return jupiterOrmSql({
 				client: 'mysql',
 				connection: options
 			});
-		},
+	}
+	
+	adapter = {
 		/**
 		 * Construct queries to database.
 		 */
@@ -33,5 +34,5 @@ export function Fabric(options) {
 		
 	}
 	
-	return jupiterOrmSql.connect(options);
+	return adapter;
 }
